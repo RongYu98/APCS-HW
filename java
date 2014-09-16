@@ -1,8 +1,10 @@
 
 public class Driver {
-       public static void main(String[]) args){
-       	      /* we are declaring G to be a local variable of type Greeter(which is 
-	      class we defined). In java we have to say what type of stuff a variable 
+       public static void main(String[] args){
+       	      /* we are declaring G to be a local
+	      variable of type Greeter(which is 
+	      class we defined). In java we have
+	      to say what type of stuff a variable 
 	      hold
 	      */
 	      Greeter g;
@@ -11,21 +13,13 @@ public class Driver {
 	      2. set up the greeter (java does this)
 	      3. returns the memory adress (location) for it
 	      4. stores that adress in G
+
 	      g stroes the reference to the 
 	      */
 	      System.out.println(g)
-	      }
+	      
 	      //call the greet method on g
 	      g = new Greeter();
-
-	public void ungreet (){
-	       System.out.println("unHello World")
-}
-	public void Greet(){
-	String s = new String("Hello World");
-	       System.out.println("Hello World")
-}
-}
 
 public class Driver2 {
        public static void main(String[] args) {
@@ -44,4 +38,3 @@ public class Driver2 {
        System.out.println(g3: +"g3);
 }
 }
-
