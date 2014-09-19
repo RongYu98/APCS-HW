@@ -9,6 +9,5 @@ public class Driver2{
     Greeter g2= new Greeter("Howdy");
 	System.out.println("Afetr the constructor");
 	System.out.println(g2.greet());
-
     }
 }
