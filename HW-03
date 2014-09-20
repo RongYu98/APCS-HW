@@ -1,0 +1,13 @@
+import java.io.*;
+
+public class Driver {
+	public static void main (String[] args){
+		String s="Rong Yu";
+		String Spacer = Integer.toString(s.indexOf(" "));
+		String LastName = s.substring(s.indexOf(" ")+1);
+		String FirstName = s.substring(0, s.indexOf(" "));
+		System.out.println(FirstName);
+		System.out.println(LastName);
+
+	}
+}
