@@ -26,3 +26,20 @@ public int diff21(int n) {
 	return (21-n);
 
 }
+
+
+public boolean lastDigit(int a, int b, int c) {
+  int A = a % 10;
+  int B = b % 10;
+  int C = c % 10;
+  if (A == B) {
+  return true;
+  } else if (A==C){
+  return true;
+  } else if (B==C){
+  return true;
+  } else return false;
+  
+
+}
+
