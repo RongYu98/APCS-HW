@@ -1,3 +1,5 @@
+public class StringStuff{
+
 public String nonStart(String a, String b) {
  
 	String NewA = a.substring(1);
@@ -54,4 +56,5 @@ public int teaParty(int tea, int candy) {
    } else if (tea >= 5 && candy >= 5){
    	return 0;
    }
-   }
+}
+}
