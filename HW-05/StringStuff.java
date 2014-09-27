@@ -46,15 +46,16 @@ public boolean lastDigit(int a, int b, int c) {
 }
 
 public boolean nearHundred(int n) {
-  return ((Math.abs(100 - n) <= 10 ||(Math.abs(200 - n) <=10);
+  return ((Math.abs(100 - n)) <= 10 ||(Math.abs(200 - n) <=10));
 }
 
 public int teaParty(int tea, int candy) {
-   if (tea < 5 || candy < 5) {return 0};
-   if (tea >= (candy * 2) || candy >= (tea * 2)) {
+  if (tea < 5 || candy < 5) {
+   return 0;
+   } else if (tea >= (candy * 2) || candy >= (tea * 2)) {
    	return 2;
-   } else if (tea >= 5 && candy >= 5){
-   	return 0;
    }
+ 	return 1;
+
 }
 }
