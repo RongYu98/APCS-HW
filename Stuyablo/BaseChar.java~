@@ -1,0 +1,24 @@
+//superClass of Warrior and mage
+public class BaseChar {
+    private in health = 20;
+    private String name;
+
+    public void setName(String name){
+	this.name=name;
+    }
+
+    public String getName(){
+	return name;
+    }
+
+    public int getHealth(){
+	return health;
+    }
+
+    public void baseSetHealth(int i){
+	health = i;
+    }
+
+
+
+}
