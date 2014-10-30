@@ -100,4 +100,51 @@ public int[] seriesUp(int n) {
 }
 
 
+//I drew the program step by step through an entire example problem,
+//and I couldn't find the problem. I did this another few times for other
+//problems, but I can't seem to find an error.
+public int maxMirror(int[] nums) {
+  int[] reverse = new int[nums.length];
+  
+  for (int i=nums.length-1, x=0; i>0; i=i - 1, x++){
+    reverse[x]=nums[i]; }
+  
+  int max = 0;
+  
+  for (int i=0; i<nums.length; i++){
+    int counter=0;
+    int BackFront=0;
+    int FrontBack=i;
+    boolean notContinuous=true;
+    
+    while (BackFront<nums.length && FrontBack<nums.length){
+      if (notContinuous){
+        if (nums[FrontBack]!=nums[BackFront]) {
+          BackFront=BackFront + 1;}
+        else {
+          notContinuous=false;
+          counter = 1;
+          BackFront = BackFront + 1;
+          FrontBack = FrontBack + 1;}
+      //for if it isn't continuous
+      
+      //for if continuous
+      }else {
+        if (nums[FrontBack]==nums[BackFront]){
+          counter = counter + 1;
+          BackFront = BackFront + 1;
+          FrontBack = FrontBack + 1;}
+        else {
+          FrontBack = i; //to reset it
+          notContinuous = true;
+           }
+        }
+        if (counter > max){
+            max = counter;}
+      }//while
+    }//for
+  return max;      
+}
+
+
 }
