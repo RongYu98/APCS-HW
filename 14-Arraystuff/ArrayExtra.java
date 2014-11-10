@@ -12,7 +12,7 @@ public int sum67(int[] nums) {
       answer = answer + nums[x];}
     if (nums[x] == 7){
       is6 = false;}
-      }
+    }
     return answer;
 
 }
