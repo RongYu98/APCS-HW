@@ -11,16 +11,17 @@ public  class Sarray{
 	last=0;
     }
 
-    public void add(int n){
+    public boolean add(int n){
     if (last==data.length-1){
         int[] ph = data;
-        data= new int[data.length+1];
+        data = new int[data.length+1];
         for ( int i=0; i<ph.length;i++){
         data[i]=ph[i];
         }
     }
-        last++;
         data[last]=n;
+        last++;
+        return true;
     }
 
     public void add(int index, int n){
@@ -42,24 +43,30 @@ public  class Sarray{
     }
 
     public int get(int index){
-    return data[index];
+    if (index>data.length){
+        throw new ArrayIndexOutOfBoundsException();}
+    else {
+        return data[index];}
     }
 
-    public void set(int index, int i){
-    if (data.length>index){
-        data[index]=i;
-    }
+    public int set(int index, int i){
+    int Z;
+    Z = data[index];
+    data[index]=i;
+    return Z;
     }
 
     public int size(){
-    return last+1;
+    return last;
     }
 
-    public void remove(int index){
+    public int remove(int index){
+    int Z = data[index];
     for (int i=index; i<last; i++){
         data[i]=data[i+1];
     }
     data[last]=0;
     last--;
+    return Z;
     }
 }
