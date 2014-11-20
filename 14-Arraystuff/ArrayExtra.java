@@ -12,7 +12,7 @@ public int sum67(int[] nums) {
       answer = answer + nums[x];}
     if (nums[x] == 7){
       is6 = false;}
-      }
+    }
     return answer;
 
 }
@@ -100,6 +100,9 @@ public int[] seriesUp(int n) {
 }
 
 
+<<<<<<< HEAD
+}
+=======
 //I drew the program step by step through an entire example problem,
 //and I couldn't find the problem. I did this another few times for other
 //problems, but I can't seem to find an error.
@@ -148,3 +151,4 @@ public int maxMirror(int[] nums) {
 
 
 }
+>>>>>>> 00bc3537937528b616e4fc0274bf5e558578f095
