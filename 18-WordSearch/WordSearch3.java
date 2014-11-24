@@ -2,6 +2,7 @@
  * Creates a word search puzzle
  *
  */
+import java.io.*;
 import java.util.*;
 
 public class WordSearch3{
@@ -298,6 +299,7 @@ public class WordSearch3{
 	w.addWordDUL("shello", 11, 21);
 	w.addWordDUL("hello", 5, 19);
 	*/
+	/*
 	System.out.println(w.addWord("HELLO"));
 	System.out.println(w.addWord("HELLOS"));
 	System.out.println(w.addWord("HELLO"));
@@ -307,6 +309,18 @@ public class WordSearch3{
 	System.out.println(w.addWord("HELLO"));	
 	System.out.println(w.addWord("HELLOS"));	
 	System.out.println(w.addWord("HELLO"));
+	*/
+	Scanner sc = null;
+		try {
+			sc = new Scanner(new File("words.txt"));
+		} catch (Exception e){
+			System.out.println("Can't open file");
+			System.exit(0);
+		}
+		while (sc.hasNext()){
+			String s = sc.next();
+			w.addWord(s);
+		}
 	w.FillUp();
 	System.out.println(w);
     }
