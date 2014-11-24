@@ -200,7 +200,7 @@ public class WordSearch3{
 		r--; c--;}
 	}
 	r = row; c= col;
-	System.out.println(Work);
+	//System.out.println(Work);
 	if (Work){
 	    for (int i=0; i<w.length(); i++){
 		 board[r][c]= w.charAt(i);
@@ -228,6 +228,16 @@ public class WordSearch3{
 	return Works;
 }
 
+    public void FillUp(){
+	char[] chars = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t', 'u', 'v', 'w','x','y','z'};
+	for (int i = 0; i < board.length; i++) {
+	    for (int j = 0; j < board[i].length; j++) {
+		if (board[i][j]=='.'){
+		    Random rand = new Random();
+		    board[i][j]=chars[rand.nextInt(23)];
+		}
+	    }
+	}}
 
     public static void main(String[] args) {
 	WordSearch3 w = new WordSearch3();
@@ -288,15 +298,16 @@ public class WordSearch3{
 	w.addWordDUL("shello", 11, 21);
 	w.addWordDUL("hello", 5, 19);
 	*/
-	System.out.println(w.addWord("Hello"));
-	System.out.println(w.addWord("Hellos"));
-	System.out.println(w.addWord("Hello"));
-	System.out.println(w.addWord("Hellos"));	
-	System.out.println(w.addWord("Hello"));	
-	System.out.println(w.addWord("Hellos"));	
-	System.out.println(w.addWord("Hello"));	
-	System.out.println(w.addWord("Hellos"));	
-	System.out.println(w.addWord("Hello"));	
+	System.out.println(w.addWord("HELLO"));
+	System.out.println(w.addWord("HELLOS"));
+	System.out.println(w.addWord("HELLO"));
+	System.out.println(w.addWord("HELLOS"));	
+	System.out.println(w.addWord("HELLO"));	
+	System.out.println(w.addWord("HELLOS"));	
+	System.out.println(w.addWord("HELLO"));	
+	System.out.println(w.addWord("HELLOS"));	
+	System.out.println(w.addWord("HELLO"));
+	w.FillUp();
 	System.out.println(w);
     }
 ////////////////The board starts at 0, then 1 , 2, 3
