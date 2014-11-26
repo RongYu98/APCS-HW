@@ -1,0 +1,73 @@
+public  class Sarray{
+    private String[] data;
+    private int last;
+    
+    public Sarray(){
+	this(10);
+    }
+
+    public Sarray(int n){
+	data=new String[n];
+	last=0;
+    }
+
+    public boolean add(String n){
+    if (last==data.length-1){
+        String[] ph = data;
+        data = new String[data.length+1];
+        for ( int i=0; i<ph.length;i++){
+        data[i]=ph[i];
+        }
+    }
+        data[last]=n;
+        last++;
+        return true;
+    }
+
+    /*    public void add(int index, int n){
+    if (data.length-1==last){
+        int PlaceHolder[] = data;
+        data = new int[data.length+1];
+        for (int i=0;i<index; i++){
+        data[i]=PlaceHolder[i];
+        }
+        data[index]=n;
+        for (int i=index+1; i<data.length+1; i++){
+        data[i]=PlaceHolder[i-1];
+        }
+    } else {
+        for (int i=last+1; i>index; i--){
+        data[i] = data[i-1];}
+        data[index]= n;}
+    last++;
+    }*/
+
+    public int get(int index){
+    if (index>data.length){
+        throw new ArrayIndexOutOfBoundsException();}
+    else {
+        return data[index];}
+    }
+    /*
+    public int set(int index, int i){
+    int Z;
+    Z = data[index];
+    data[index]=i;
+    return Z;
+    }
+    */
+
+    public int size(){
+    return last;
+    }
+
+    public int remove(int index){
+    int Z = data[index];
+    for (int i=index; i<last; i++){
+        data[i]=data[i+1];
+    }
+    data[last]=0;
+    last--;
+    return Z;
+    }
+}
