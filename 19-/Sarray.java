@@ -11,6 +11,15 @@ public  class Sarray{
 	last=0;
     }
 
+    public void iSort(){
+	int n=0;
+    }
+    public String Sorter(Array<String> ArrayS, String n, int number){
+	int i;
+	for (i=number; i>0 && n<ArrayS[i-1]; i--){
+	    ArrayS=[i+1]=ArrayS[i];}
+    }
+    
     public String toString(){
 	String Answer = "";
 	for (int i=0;i<data.length;i++){
