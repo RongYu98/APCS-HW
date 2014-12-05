@@ -123,10 +123,35 @@ public  class Sarray{
 	last--;
 	return X;
     }
-    
+
+    public void ADDY(int x){
+	for (int i=0; i<x; i++){
+	    add("a");
+	    add("b");
+	    add("c");
+	    add("d");
+	    add("e");
+	    add("f");
+	    add("g");
+	    add("h");
+	    add("i");
+	    add("j");
+	    add("k");
+	    add("l");
+	    add("m");
+	    add("n");
+	    add("o");
+	    add("p");
+	    add("q");
+	    add("r");
+	    add("s");
+	    add("t");
+	}
+    }
     public static void main(String[] args){
 	Sarray V = new Sarray();
 	//System.out.println(V);
+	V.ADDY(1000);
 	V.add("aa");
 	V.add("ab");
 	V.add("bb");
@@ -154,9 +179,10 @@ public  class Sarray{
 	//System.out.println(V.add("go and die"));
 	//System.out.println(V.remove(0));
 	//System.out.println(V);
-	//V.bSort(); //.062-.066
-	//V.sSort(); //.057-.069
-	//V.iSort();
+	//V.bSort(); //1.981
+	//V.sSort(); //0.934
+	//V.iSort(); //0.612
+	//ISort is faster
 	
 	//System.out.println(V);
     }
