@@ -1,0 +1,36 @@
+public class Interval{
+    private int[] interval;
+    private int low;
+    private int high;
+    private Random rnd;
+    
+    public Interval(){
+	rnd = new Random;
+	high = rnd.nextInt(41) - 20;
+	low =  rnd.nextInt(41) - 20;
+	if (low > high){
+	    int n = low;
+	    low = high;
+	    high = n;
+	}
+	interval = new int[2];
+	interval[0] = low;
+	interval[1] = high;
+    }
+
+    public String toString(){
+	String a = "";
+	a="[";
+	a+=interval[0];
+	a+=" , ";
+	a+=interval[1];
+	a+="]";
+	return a;
+    }
+
+    public stativ void main(String args[]){
+	Interval INT = new Interval();
+	System.out.println(INT);
+
+    }
+}
