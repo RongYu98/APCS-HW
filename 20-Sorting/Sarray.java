@@ -1,9 +1,11 @@
+import java.util.*;
+import java.io.*;
 public  class Sarray{
     private String[] data;
     private int last;
     
     public Sarray(){
-	this(5);
+	this(20000);
     }
 
     public Sarray(int n){
@@ -44,7 +46,7 @@ public  class Sarray{
 	    data[i]=smallest;	    
 	}
     }
-
+    
     public void bSort(){
 	for (int i=0; i<data.length; i++){
 	    for (int z=0; z<data.length-1; z++){
@@ -55,6 +57,12 @@ public  class Sarray{
 		    data[z+1]=str;}
 	    }
 	}
+    }
+
+    public void BuiltIn(){
+	/*built in sorter. If only a fraction, Array.sort(data, 0, n)*/
+	Arrays.sort(data);
+	//for arrayLists, Collections.sort(data)
     }
     
     public String toString(){
@@ -103,13 +111,6 @@ public  class Sarray{
         return data[index];}
     }
     
-    /*public set(int index, int i){
-    int Z;
-    Z = data[index];
-    data[index]=i;
-    return Z;
-    }*/
-
     public int size(){
     return last;
     }
@@ -179,10 +180,19 @@ public  class Sarray{
 	//System.out.println(V.add("go and die"));
 	//System.out.println(V.remove(0));
 	//System.out.println(V);
+	
 	//V.bSort(); //1.981
 	//V.sSort(); //0.934
 	//V.iSort(); //0.612
 	//ISort is faster
+	//V.BuiltIn(); //0.445
+
+	/* The builtin one is a lot faster than the i,b,
+	   s sorts that I wrote
+	   I ran the code with everythign blacked out, and
+	   the code takes .450 to add all the things....
+	   So my data is very inaccurate with the times
+	*/
 	
 	//System.out.println(V);
     }
