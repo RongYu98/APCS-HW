@@ -15,8 +15,8 @@ public class Interval{
     
     public Interval(){
 	rnd = new Random();
-	int high = rnd.nextInt(41) - 20;
-	int low =  rnd.nextInt(41) - 20;
+	high = rnd.nextInt(41) - 20;
+	low =  rnd.nextInt(41) - 20;
 	if (low > high){
 	    int n = low;
 	    low = high;
@@ -28,7 +28,6 @@ public class Interval{
 	
     }
 
-  
     public String toString(){
 	String a = "";
 	a="[";
@@ -46,12 +45,34 @@ public class Interval{
     public int getHigh(){
 	return high;
     }
-    
+
+    public int compareTo(Interval other){
+	if (this.getLow()>other.getLow()){
+	    return 1;}
+	else if (this.getLow()<other.getLow()){
+	    return -1;}
+	if (this.getHigh()==other.getHigh()){
+	    return 0;}
+	else if (this.getHigh()>other.getHigh()){
+	    return 2;}
+	else {
+	    return -2;}
+    }
+
     public static void main(String args[]){
 	Interval[] INT  = new Interval[10];
-	for (int i=0; i<10; i++){
+	/*for (int i=0; i<10; i++){
 	    INT[i] = new Interval();
-	    System.out.println(INT(i));
+	    System.out.println(INT[i]);
+	}*/
+	for (int i=0; i<10; i++){
+	    INT[i]=new Interval();
+	    System.out.print(INT[i] + " ");
+	    //System.out.println(INT[i].getHigh());
+	}
+	System.out.println();
+	for (int i=0; i<INT.length-1; i++){
+	    System.out.println(INT[i].compareTo(INT[i+1]));
 	}
 
     }
