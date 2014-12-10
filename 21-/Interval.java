@@ -1,5 +1,5 @@
 import java.util.*;
-public class Interval{
+public class Interval implements Comparable{
     private int[] interval;
     private int low;
     private int high;
@@ -46,22 +46,34 @@ public class Interval{
 	return high;
     }
 
-    public int compareTo(Interval other){
-	if (this.getLow()>other.getLow()){
+    public int compareTo(Object other){
+	/* cast other to the appropriate type and 
+	   store in a local variable for convenience */
+	Interval o = (Interval) other;
+	/*
+	if (this.getLow()>o.getLow()){
 	    return 1;}
-	else if (this.getLow()<other.getLow()){
+	else if (this.getLow()<o.getLow()){
 	    return -1;}
-	if (this.getHigh()==other.getHigh()){
+	if (this.getHigh()==o.getHigh()){
 	    return 0;}
-	else if (this.getHigh()>other.getHigh()){
+	else if (this.getHigh()>o.getHigh()){
 	    return 2;}
 	else {
 	    return -2;}
+	*/
+	///*
+	if (this.getLow()==o.getHigh()){
+	    return this.getHigh()-o.getLow();}
+	else {
+	    return this.getLow()-o.getLow();}
+	//*/
     }
 
     public static void main(String args[]){
 	Interval[] INT  = new Interval[10];
 	/*for (int i=0; i<10; i++){
+
 	    INT[i] = new Interval();
 	    System.out.println(INT[i]);
 	}*/
@@ -72,8 +84,15 @@ public class Interval{
 	}
 	System.out.println();
 	for (int i=0; i<INT.length-1; i++){
-	    System.out.println(INT[i].compareTo(INT[i+1]));
+	    //System.out.println(INT[i].compareTo(INT[i+1]));
 	}
-
+	//Arrays.sort(sa, 0 2)
+	Arrays.sort(INT);
+	for (int i=0; i<10; i++){
+	    //INT[i]=new Interval();
+	    System.out.print(INT[i] + " ");
+	    //System.out.println(INT[i].getHigh());
+	}
+	System.out.println();
     }
 }
