@@ -44,37 +44,42 @@ public class Search{
 
     public Comparable BSearch(Comparable item){
 	SortIt();
-	int mid = a.length/2;
-	for (int i=0; i<a.length && mid>=0 && mid<a.length; i++){
+	int high=a.length-1;
+	int low=0; 	
+	for (int i=0; i<a.length; i++){
+	    int mid = (high+low)/2;
 	    if (item.compareTo(a[mid])==0){
 		return a[mid];}
 	    if (item.compareTo(a[mid])>0){
-		mid=mid+1;}
+		low=mid;}
 	    else {
-		mid=mid-1;}
+		high=mid;}
 	}
 	return null;
     }
 
     public Comparable RBSearch(Comparable item){
-	SortIt(); 	
-	int mid = a.length/2;
+	SortIt();
+	int high=a.length-1;
+	int low=0; 
+	int mid=(high+low)/2;
 	if (item.compareTo(a[mid])==0){
 	    return a[mid];}
 	else if (item.compareTo(a[mid])>0){
-		return RBSearch(item, mid+1, 0,0);}
+		return RBSearch(item, mid,high);}
 	else {
-		return RBSearch(item, mid-1, 0,0);}
-    }// 10 9 11
-    public Comparable RBSearch(Comparable item, int mid, int First, int Second){
-	if (mid==Second){
+		return RBSearch(item, low,mid);}
+    }
+    public Comparable RBSearch(Comparable item, int low, int high){
+	if (high==low+1){
 	    return null;}
-	if (item.compareTo(a[mid])==0){
-	    return a[mid];}
-	else if (item.compareTo(a[mid])>0){
-		return RBSearch(item, mid+1, mid, First);}
+	int middle=(high+low)/2;
+	if (item.compareTo(a[middle])==0){
+	    return a[middle];}
+	else if (item.compareTo(a[middle])>0){
+		return RBSearch(item, middle,high);}
 	else {
-		return RBSearch(item, mid-1, mid, First);}
+		return RBSearch(item, low, middle);}
     }
 
     public static void main(String args[]){
@@ -88,12 +93,12 @@ public class Search{
 	    int y =r.nextInt(100);
 	    System.out.println(y); 
 	    //System.out.println(x.LSearch(y)); //20 seconds
-	    //System.out.println(x.BSearch(y));  //19 seconds
-	    //System.out.println(x.RBSearch(y));  //This one gets stackoverflow
+	    //System.out.println(x.BSearch(y));  //14 seconds
+	    //System.out.println(x.RBSearch(y));  //19 seconds?
 	//}
 	//System.out.println(x);
-	/* the RBSearch gets a stack overflow, no idea how to make more efficient
-	     the BSearch is faster whent he number is near the middle or end
+	/* the RBSearch is way slower than the BSearch
+	     the BSearch is faster whent the number is near the middle or end
 	     the LSearch is faster when the number was generated earlier */
     }
 	
