@@ -1,0 +1,29 @@
+Repository: https://github.com/hfilosa/Final-Project/tree/master/16-1.13
+
+Driver.java
+Line 77 and 79: I feel that you should give an example how what the player should type in one line after the other and what should happen when (s)he types something. It would make things clearer
+
+Line 85: It feels like typing 0-0 or 0-0-0 will move the piece by itself without the player needing to pick a piece
+
+Line 147: I do not believe there is a check on whether or not the entered is valid or not. If an incorrect coord is entered, like 4e and not e4, then the program might crash.
+
+Line 173: Base off of this line, I think you enter the moves seperately, but from Line 79 and 81, it seems like you enter the coords of the piece you want to move and where you want to move to on the same line
+
+Line 177: Does this work? I feel that the return statement without anything might be a problem, and if the person types "?", how would it work, the checker for that is on top of the "@" checker.
+
+Line 233: You still need to type in the coords even after "!"
+
+Line 279: I think you should change the "Game Over" to "Someone Won." Seeing Someone Won would be, I believe, much more satisfying.
+
+Board.java
+Variables and method names are straight foward and understandable.
+
+Piece.java
+Line 5: I'm not sure what the reset does, I know that the others are suppose to be color numbers.
+
+Line 38: What's the point of this? This doesn't show up anywhere, I even used Crtl-F. It only shows up and is never used. If it isn't used, then I also see no point in Implementing Comparable.
+
+
+Ideas:
+-Perhaps you can add a confirm feature or an undo feature. I can imagine myself feeling tired and messing up a coordinate point, not realizing that, and then being screwed over from not being able to change it.
+-Perhaps you can add a name system, so that it would say so-and-so's turn. This would seem friendlier than saying Player One
